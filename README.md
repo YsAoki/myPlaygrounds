@@ -61,3 +61,36 @@ git init
 git remote add origin "リモートリポジトリのURL"
 ```
 
+- リモートリポジトリを切り替えたい場合
+
+```
+git remote set-url origin "リモートリポジトリのURL"
+```
+
+## 環境変数の取得について。
+
+- create-react-app 時
+
+```
+process.env.REACT_APP ~
+```
+
+.env の prefix に対して、「REACT*APP*」を使用すること。
+
+- vite 時
+
+```
+import.meta.env.
+```
+
+.env の prefix に対して、「VITE\_」を使用すること。
+
+## 環境変数ファイルの名称について
+
+- .env 基本的に使わないが、全環境共通で使用される設定（例: アプリケーションのバージョン番号）がある場合は .env を利用するなどのガイドラインを設けると分かりやすくなる。
+
+## .gitignore に追加するべき内容。
+
+- .env.development ⇨ ローカル開発用
+- .env.staging ⇨ ステージング環境用
+- .env.production ⇨ 本番環境用

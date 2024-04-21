@@ -1,7 +1,16 @@
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: border-box;
-  };
+}
 
-  button:hover {
-    cursor: pointer;
+body {
+  background-color: #fafafa;
+}
+
+@keyframes fadeInAnime{
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}

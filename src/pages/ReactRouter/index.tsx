@@ -6,6 +6,7 @@ const ReactRouter: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Top />} />
+      <Route path="/list" />
     </Routes>
   );
 };

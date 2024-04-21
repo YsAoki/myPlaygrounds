@@ -20,7 +20,7 @@ https://qiita.com/teradonburi/items/fcdd900adb069811bfda
 ## ライブラリのインストール一括コマンド
 
 ```
-npm install @mui/material @mui/icons-material @emotion/react react-router-dom dayjs prettier-plugin-organize-imports
+npm install @mui/material @mui/icons-material @emotion/react react-router-dom dayjs prettier-plugin-organize-imports @emotion/styled @emotion/react reset-css
 ```
 
 develop 環境のみで使用するライブラリのインストール

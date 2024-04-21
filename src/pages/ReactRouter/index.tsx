@@ -1,12 +1,13 @@
-import React, { FC } from 'react'
-import { Routes } from 'react-router-dom'
+import { FC } from "react";
+import { Route, Routes } from "react-router-dom";
+import Top from "../Top";
 
-const ReactRouter:FC = () => {
+const ReactRouter: FC = () => {
   return (
     <Routes>
-      
+      <Route path="/" element={<Top />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default ReactRouter
+export default ReactRouter;

@@ -1,5 +1,16 @@
 {
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always"
-  }
+    "source.organizeImports": "always",
+    "source.fixAll.stylelint": "always"
+  },
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "sass",
+    "less",
+    "postcss",
+    "typescript",
+    "typescriptreact"
+  ]
 }

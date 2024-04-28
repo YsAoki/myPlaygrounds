@@ -1,7 +1,7 @@
 import { AppBar, Toolbar } from "@mui/material";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { SHeaderTitle } from "./style";
+import { SHeaderSpacer, SHeaderTitle } from "./style";
 
 const Header: FC = () => {
   const navigate = useNavigate();
@@ -11,13 +11,16 @@ const Header: FC = () => {
   };
 
   return (
-    <AppBar color="primary">
-      <Toolbar>
-        <SHeaderTitle as="h1" onClick={onClickLogo}>
-          MyPlayGround
-        </SHeaderTitle>
-      </Toolbar>
-    </AppBar>
+    <>
+      <AppBar color="primary">
+        <Toolbar>
+          <SHeaderTitle as="h1" onClick={onClickLogo}>
+            MyPlayGround
+          </SHeaderTitle>
+        </Toolbar>
+      </AppBar>
+      <SHeaderSpacer />
+    </>
   );
 };
 

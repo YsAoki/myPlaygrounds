@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import { FC } from "react";
-import CContainedButton from "../../atoms/CContaiendButton";
+import CContainedButton from "../../atoms/CContainedButton";
 import Header from "../../organisms/Header";
 import { SFlexBox } from "./style";
 

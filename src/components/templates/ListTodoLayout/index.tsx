@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { getRandomString } from "../../../utils";
 import { SITE_VIEW_DATE_FORMAT, generateDateNow } from "../../../utils/convertTime";
-import CContainedButton from "../../atoms/CContaiendButton";
+import CContainedButton from "../../atoms/CContainedButton";
 import CTextField from "../../atoms/CTextField";
 import Header from "../../organisms/Header";
 import TodoCard from "../../organisms/TodoCard";

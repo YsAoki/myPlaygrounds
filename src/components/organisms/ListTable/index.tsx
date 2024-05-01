@@ -8,7 +8,7 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { RELEASE_DETAILS } from "../../../config/ReleaseDetail";
 import { addNumPrefixZero } from "../../../utils/convertString";
-import CContainedButton from "../../atoms/CContaiendButton";
+import CContainedButton from "../../atoms/CContainedButton";
 import { STableCell, STableRow } from "./style";
 
 export const ListTable: FC = () => {

@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 import ListMuiDefaultColors from "../pages/ListMuiDefaultColors";
+import ListMuiForm from "../pages/ListMuiForm";
 import ListTodo from "../pages/ListTodo";
 import ListDayjs from "../pages/ListUseDayjs";
 
-export type ReleaseDetail = {
+type ReleaseDetail = {
   title: string;
   url: string;
   element: ReactNode;
@@ -31,6 +32,13 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     url: "dayjs_sample",
     element: <ListDayjs />,
     detail: "日付変換ライブラリ、day.jsの変換",
+    date: "2024/04/29",
+  },
+  {
+    title: "MuiForm",
+    url: "mui_form",
+    element: <ListMuiForm />,
+    detail: "muiを使用して、チェックボックス、ラジオボタンのフォームを作成",
     date: "2024/04/29",
   },
 ];

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import CContainedButton from "../../atoms/CContaiendButton";
+import CContainedButton from "../../atoms/CContainedButton";
 import { TodoData } from "../../templates/ListTodoLayout";
 import { STodoCardWrapper } from "./style";
 

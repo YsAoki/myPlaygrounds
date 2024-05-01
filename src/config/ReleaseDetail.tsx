@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import ListMuiDefaultColors from "../pages/ListMuiDefaultColors";
 import ListTodo from "../pages/ListTodo";
+import ListDayjs from "../pages/ListUseDayjs";
 
 export type ReleaseDetail = {
   title: string;
@@ -12,7 +13,7 @@ export type ReleaseDetail = {
 
 export const RELEASE_DETAILS: ReleaseDetail[] = [
   {
-    title: "Muiデフォルトカラーパレット",
+    title: "MuiDefaultButtons",
     url: "mui_color_list",
     element: <ListMuiDefaultColors />,
     detail: "muiで使用する、themeカラー一覧",
@@ -23,6 +24,13 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     url: "react_hook_form_todo",
     element: <ListTodo />,
     detail: "react-hook-formを使用したTodoアプリ",
+    date: "2024/04/29",
+  },
+  {
+    title: "DayjsPractice",
+    url: "dayjs_sample",
+    element: <ListDayjs />,
+    detail: "日付変換ライブラリ、day.jsの変換",
     date: "2024/04/29",
   },
 ];

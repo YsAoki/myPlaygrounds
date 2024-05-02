@@ -3,6 +3,7 @@ import ListMuiDefaultColors from "../pages/ListMuiDefaultColors";
 import ListMuiForm from "../pages/ListMuiForm";
 import ListTodo from "../pages/ListTodo";
 import ListDayjs from "../pages/ListUseDayjs";
+import ListIndexChange from "../pages/ListIndexChange";
 
 type ReleaseDetail = {
   title: string;
@@ -39,6 +40,13 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     url: "mui_form",
     element: <ListMuiForm />,
     detail: "muiを使用して、チェックボックス、ラジオボタンのフォームを作成",
+    date: "2024/04/29",
+  },
+  {
+    title: "index_change",
+    url: "index_changer",
+    element: <ListIndexChange />,
+    detail: "表示されるindex番号をtimeoutで入れ替える",
     date: "2024/04/29",
   },
 ];

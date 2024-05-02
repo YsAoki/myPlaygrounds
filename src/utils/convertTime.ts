@@ -9,7 +9,7 @@ export const SITE_VIEW_DATE_DEFAULT ="YYYY-MM-DD"
 export const SITE_VIEW_DATE_FORMAT = "YYYY年MM月DD日HH時mm分"
 
 // 現在時刻を作成する。
-export const generateDateNow = (formatString: string) => dayjs().format(formatString);
+export const generateDateNow = (formatString: string = SITE_VIEW_DATE_DEFAULT) => dayjs().format(formatString);
 
 // 指定された日付をJSTに変換し、ISO 8601形式で出力する関数
 export const formatDateToISO8601WithJST = (inputDate: string) => {

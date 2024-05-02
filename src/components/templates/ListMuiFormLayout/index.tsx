@@ -43,7 +43,6 @@ const ListMuiFormLayout: FC = () => {
 
   const onSubmitEvent = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(forSendValues);
   };
 
   return (

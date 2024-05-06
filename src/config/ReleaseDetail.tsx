@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import ListIndexChange from "../pages/ListIndexChange";
 import ListMuiDefaultColors from "../pages/ListMuiDefaultColors";
 import ListMuiForm from "../pages/ListMuiForm";
+import ListStyleProps from "../pages/ListStyleProps";
 import ListTodo from "../pages/ListTodo";
 import ListDayjs from "../pages/ListUseDayjs";
-import ListIndexChange from "../pages/ListIndexChange";
 
 type ReleaseDetail = {
   title: string;
@@ -43,10 +44,17 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     date: "2024/04/29",
   },
   {
-    title: "index_change",
+    title: "index_changer",
     url: "index_changer",
     element: <ListIndexChange />,
     detail: "表示されるindex番号をtimeoutで入れ替える",
+    date: "2024/04/29",
+  },
+  {
+    title: "style_props",
+    url: "style_props",
+    element: <ListStyleProps />,
+    detail: "propsを引き渡してスタイルを変更する",
     date: "2024/04/29",
   },
 ];

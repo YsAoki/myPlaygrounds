@@ -1,10 +1,10 @@
-import { Container } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { Dayjs } from "dayjs";
 import { FC, useState } from "react";
 import { SITE_VIEW_DATE_DEFAULT, formatDateToISO8601WithJST, formatDateToISO8601WithUTCEndZ, formatDateToISO8601WithUTCEndZero } from "../../../utils/convertTime";
+import CContainer from "../../atoms/CContainer";
 import CPaper from "../../atoms/CPaper";
 import Header from "../../organisms/Header";
 
@@ -59,7 +59,7 @@ const ListDayjsLayout: FC = () => {
   return (
     <>
       <Header />
-      <Container>
+      <CContainer>
         {/* アプリケーション全体で使用することが多いため、本来はmain.ts内に書くべき */}
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <h2>時間管理の要点</h2>
@@ -90,7 +90,7 @@ const ListDayjsLayout: FC = () => {
             </div>
           )}
         </LocalizationProvider>
-      </Container>
+      </CContainer>
     </>
   );
 };

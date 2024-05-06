@@ -1,10 +1,11 @@
-import { Container, Paper, PaperProps } from "@mui/material";
+import { Paper, PaperProps } from "@mui/material";
 import { FC } from "react";
+import CContainer from "../CContainer";
 
 const CPaper: FC<PaperProps> = ({ children, ...other }) => {
   return (
     <Paper elevation={4} {...other}>
-      <Container sx={{ padding: "16px 0" }}>{children}</Container>
+      <CContainer>{children}</CContainer>
     </Paper>
   );
 };

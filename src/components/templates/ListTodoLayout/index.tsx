@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { getRandomString } from "../../../utils";
@@ -7,6 +7,7 @@ import CContainedButton from "../../atoms/CContainedButton";
 import CTextField from "../../atoms/CTextField";
 import Header from "../../organisms/Header";
 import TodoCard from "../../organisms/TodoCard";
+import CContainer from "../../atoms/CContainer";
 
 export type TodoData = {
   id: string;
@@ -70,7 +71,7 @@ const ListTodoLayout: FC = () => {
   return (
     <>
       <Header />
-      <Container>
+      <CContainer>
         <Typography component={"h2"}>React-hook-Formを使用してフォームを作成する</Typography>
         <form onSubmit={handleSubmit(onSubmit)} style={{ margin: "0 auto", width: "40%", display: "flex", flexDirection: "column", border: "2px solid grey", gap: "16px", padding: "16px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
@@ -103,7 +104,7 @@ const ListTodoLayout: FC = () => {
             ))}
           </div>
         </div>
-      </Container>
+      </CContainer>
     </>
   );
 };

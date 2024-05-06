@@ -1,5 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import CContainedButton from "../../atoms/CContainedButton";
+import CContainer from "../../atoms/CContainer";
+import Header from "../../organisms/Header";
 
 const BUTTONS_ARR: { text: string; color: "warning" | "primary" | "inherit" | "secondary" | "success" | "error" | "info" }[] = [
   {
@@ -46,13 +48,16 @@ const ListIndexChangeLayout: FC = () => {
   }, []);
 
   return (
-    <div style={{ display: "flex", gap: "16px" }}>
-      {buttonsArr.map((item, index) => (
-        <CContainedButton key={index} color={item.color}>
-          {item.text}
-        </CContainedButton>
-      ))}
-    </div>
+    <>
+      <Header />
+      <CContainer style={{ display: "flex", gap: "16px" }}>
+        {buttonsArr.map((item, index) => (
+          <CContainedButton key={index} color={item.color}>
+            {item.text}
+          </CContainedButton>
+        ))}
+      </CContainer>
+    </>
   );
 };
 

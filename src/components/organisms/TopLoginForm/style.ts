@@ -1,4 +1,4 @@
-import { Container, Paper, Typography, styled } from "@mui/material";
+import { Paper, Typography, styled } from "@mui/material";
 
 export const SWrapperPaper = styled(Paper)`
   left: 50%;
@@ -6,10 +6,6 @@ export const SWrapperPaper = styled(Paper)`
   top: 50%;
   position: absolute;
   width: 400px;
-`
-
-export const SContainer = styled(Container)`
-  padding: 16px;
 `
 
 export const SForm = styled("form")`

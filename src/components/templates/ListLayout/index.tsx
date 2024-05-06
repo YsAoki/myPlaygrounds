@@ -1,5 +1,5 @@
-import { Container } from "@mui/material";
 import { FC } from "react";
+import CContainer from "../../atoms/CContainer";
 import Header from "../../organisms/Header";
 import ListTable from "../../organisms/ListTable";
 
@@ -7,9 +7,9 @@ const ListLayout: FC = () => {
   return (
     <>
       <Header />
-      <Container>
+      <CContainer>
         <ListTable />
-      </Container>
+      </CContainer>
     </>
   );
 };

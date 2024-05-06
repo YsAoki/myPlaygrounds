@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { IS_HTTP_ONLY, IS_SECURE } from "../../../config/cookieConfig";
 import { VALID_LOGIN_ID, VALID_LOGIN_PASS } from "../../../config/loginpath";
 import useInput from "../../../hooks/useInput";
+import CContainer from "../../atoms/CContainer";
 import CTextField from "../../atoms/CTextField";
-import { SContainer, SForm, SStatusMessage, SWrapperPaper } from "./style";
+import { SForm, SStatusMessage, SWrapperPaper } from "./style";
 
 const TopLoginForm: FC = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["authTokenVal"]);
@@ -42,7 +43,7 @@ const TopLoginForm: FC = () => {
 
   return (
     <SWrapperPaper elevation={12}>
-      <SContainer>
+      <CContainer>
         <SForm
           onSubmit={(e) => {
             onSubmitEvent(e);
@@ -53,7 +54,7 @@ const TopLoginForm: FC = () => {
           {hasStatusMessage && <SStatusMessage>{statusMessage}</SStatusMessage>}
           <Button type="submit">GO</Button>
         </SForm>
-      </SContainer>
+      </CContainer>
     </SWrapperPaper>
   );
 };

@@ -1,9 +1,10 @@
-import { Container, FormControl, FormGroup, FormLabel, RadioGroup } from "@mui/material";
+import { FormControl, FormGroup, FormLabel, RadioGroup } from "@mui/material";
 import { ChangeEvent, FC, FormEvent, useCallback, useState } from "react";
 import { CITIES_CHECK_ARR, GENDER_RADIO_ARR } from "../../../config/formConfig";
 import useInput from "../../../hooks/useInput";
 import CCheckBox from "../../atoms/CCheckBox";
 import CContainedButton from "../../atoms/CContainedButton";
+import CContainer from "../../atoms/CContainer";
 import CRadioButton from "../../atoms/CRadioButton";
 import CTextField from "../../atoms/CTextField";
 import Header from "../../organisms/Header";
@@ -48,7 +49,7 @@ const ListMuiFormLayout: FC = () => {
   return (
     <div>
       <Header />
-      <Container>
+      <CContainer>
         <h2>muiで簡単なフォームを作成する</h2>
         <form onSubmit={onSubmitEvent}>
           <p>名前</p>
@@ -73,7 +74,7 @@ const ListMuiFormLayout: FC = () => {
           </div>
           <CContainedButton type="submit">決定</CContainedButton>
         </form>
-      </Container>
+      </CContainer>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import TableRow from "@mui/material/TableRow";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { RELEASE_DETAILS } from "../../../config/ReleaseDetail";
-import { addNumPrefixZero } from "../../../utils/convertString";
+import { addNumPrefixZero } from "../../../utils/addNumPrefixZero";
 import CContainedButton from "../../atoms/CContainedButton";
 import { STableCell, STableRow } from "./style";
 

@@ -1,7 +1,9 @@
 import { FormControl, FormGroup, FormLabel, RadioGroup } from "@mui/material";
-import { ChangeEvent, FC, FormEvent, useCallback, useState } from "react";
+import { ChangeEvent, FC, FormEvent, useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { CITIES_CHECK_ARR, GENDER_RADIO_ARR } from "../../../config/formConfig";
 import useInput from "../../../hooks/useInput";
+import { strNumArrToNumConvert } from "../../../utils/forQueryParams";
 import CCheckBox from "../../atoms/CCheckBox";
 import CContainedButton from "../../atoms/CContainedButton";
 import CContainer from "../../atoms/CContainer";
@@ -10,54 +12,74 @@ import CTextField from "../../atoms/CTextField";
 import Header from "../../organisms/Header";
 
 const ListMuiFormLayout: FC = () => {
-  const { input: inputTitle, onChangeInput: onChangeInputTitle } = useInput();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const [genderValue, setGenderValue] = useState(GENDER_RADIO_ARR[0].value);
-
-  const [selectCities, setSelectCities] = useState(CITIES_CHECK_ARR);
-  const forSendSelectedCities = selectCities.filter((item) => item.checked === true).map((item) => item.value);
+  const { input: title, setInput: setTitle, onChangeInput: handleTitleChange } = useInput();
+  const [gender, setGender] = useState(GENDER_RADIO_ARR[0].value);
+  const [cities, setCities] = useState(CITIES_CHECK_ARR);
+  const selectedCities = cities.filter((city) => city.checked).map((city) => city.value);
 
   const handleGenderChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setGenderValue(event.target.value);
+    (e: ChangeEvent<HTMLInputElement>) => {
+      setGender(e.target.value);
     },
-    [genderValue],
+    [gender],
   );
 
-  const handleCitiesChange = useCallback(
+  const handleCityChange = useCallback(
     (value: number) => {
-      const convertChecked = selectCities.map((item) => {
-        if (item.value === value) return { ...item, checked: !item.checked };
-        return item;
+      const updatedCities = cities.map((city) => {
+        if (city.value === value) return { ...city, checked: !city.checked };
+        return city;
       });
-      setSelectCities(convertChecked);
+      setCities(updatedCities);
     },
-    [selectCities], // 依存関係が、変更された場合にのみ関数を再生成する。
+    [cities],
   );
 
-  // 最終的に送信したいAPI想定のオブジェクト
-  const forSendValues = {
-    inputTitle: inputTitle,
-    genderValue: genderValue,
-    selectCities: forSendSelectedCities,
+  const formValues = {
+    title: title,
+    gender: gender,
+    selectedCities: selectedCities,
   };
 
-  const onSubmitEvent = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const queryParams: Record<string, string> = {};
+    if (title) queryParams.title = title as string;
+    if (gender) queryParams.gender = gender;
+    if (selectedCities.length > 0) queryParams.selectedCities = selectedCities.join(",");
+    setSearchParams(queryParams);
   };
+
+  useEffect(() => {
+    const queryTitle = searchParams.get("title");
+    const queryGender = searchParams.get("gender");
+    const querySelectedCities = searchParams.get("selectedCities");
+    if (queryTitle) setTitle(queryTitle);
+    if (queryGender) setGender(queryGender);
+    if (querySelectedCities) {
+      const selectedCityArray = strNumArrToNumConvert(querySelectedCities.split(","));
+      const updatedCities = CITIES_CHECK_ARR.map((city) => {
+        if (selectedCityArray.includes(city.value)) return { ...city, checked: true };
+        return city;
+      });
+      setCities(updatedCities);
+    }
+  }, [searchParams, setTitle, setGender, setCities]);
 
   return (
     <div>
       <Header />
       <CContainer>
-        <h2>muiで簡単なフォームを作成する</h2>
-        <form onSubmit={onSubmitEvent}>
+        <h2>muiで簡単なフォームを作成する。決定した値をクエリパラメータで保持。リロード時に値を再セットする。</h2>
+        <form onSubmit={handleSubmit}>
           <p>名前</p>
-          <CTextField value={inputTitle} onChange={onChangeInputTitle} />
+          <CTextField value={title} onChange={handleTitleChange} />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <FormControl>
               <FormLabel>性別選択</FormLabel>
-              <RadioGroup aria-label="gender" name="gender1" value={genderValue} onChange={handleGenderChange} row>
+              <RadioGroup aria-label="gender" name="gender1" value={gender} onChange={handleGenderChange} row>
                 {GENDER_RADIO_ARR.map((item, index) => (
                   <CRadioButton key={index} label={item.label} value={item.value} />
                 ))}
@@ -66,8 +88,8 @@ const ListMuiFormLayout: FC = () => {
             <FormControl>
               <FormLabel>行ってみたい都市</FormLabel>
               <FormGroup row>
-                {selectCities.map((item, index) => (
-                  <CCheckBox key={index} label={item.label} value={item.value} checked={item.checked} onChange={() => handleCitiesChange(item.value)} />
+                {cities.map((city, index) => (
+                  <CCheckBox key={index} label={city.label} value={city.value} checked={city.checked} onChange={() => handleCityChange(city.value)} />
                 ))}
               </FormGroup>
             </FormControl>

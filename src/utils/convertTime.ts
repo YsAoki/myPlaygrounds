@@ -6,6 +6,8 @@ dayjs.extend(timezone);
 
 export const SITE_VIEW_DATE_DEFAULT ="YYYY-MM-DD"
 
+export const SITE_VIEW_DATE_JPN = "YYYY年MM月DD日"
+
 export const SITE_VIEW_DATE_FORMAT = "YYYY年MM月DD日HH時mm分"
 
 // 現在時刻を作成する。

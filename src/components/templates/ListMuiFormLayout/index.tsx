@@ -17,7 +17,6 @@ const ListMuiFormLayout: FC = () => {
   const { input: title, setInput: setTitle, onChangeInput: handleTitleChange } = useInput();
   const [gender, setGender] = useState(GENDER_RADIO_ARR[0].value);
   const [cities, setCities] = useState(CITIES_CHECK_ARR);
-  const selectedCities = cities.filter((city) => city.checked).map((city) => city.value);
 
   const handleGenderChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -37,14 +36,9 @@ const ListMuiFormLayout: FC = () => {
     [cities],
   );
 
-  const formValues = {
-    title: title,
-    gender: gender,
-    selectedCities: selectedCities,
-  };
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const selectedCities = cities.filter((city) => city.checked).map((city) => city.value);
     const queryParams: Record<string, string> = {};
     if (title) queryParams.title = title as string;
     if (gender) queryParams.gender = gender;
@@ -66,7 +60,7 @@ const ListMuiFormLayout: FC = () => {
       });
       setCities(updatedCities);
     }
-  }, [searchParams, setTitle, setGender, setCities]);
+  }, [searchParams]);
 
   return (
     <div>

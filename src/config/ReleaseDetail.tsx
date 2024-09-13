@@ -5,6 +5,8 @@ import ListMuiForm from "../pages/ListMuiForm";
 import ListStyleProps from "../pages/ListStyleProps";
 import ListTodo from "../pages/ListTodo";
 import ListDayjs from "../pages/ListUseDayjs";
+import MuiDataGrid from "../pages/MuiDataGrid";
+import TypeScriptSample from "../pages/TypeScriptSample";
 
 type ReleaseDetail = {
   title: string;
@@ -56,5 +58,19 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     element: <ListStyleProps />,
     detail: "propsを引き渡してスタイルを変更する",
     date: "2024/04/29",
+  },
+  {
+    title: "mui_datagrid",
+    url: "mui_ddtagrid",
+    element: <MuiDataGrid />,
+    detail: "MuiDataGridを使用する",
+    date: "2024/08/20",
+  },
+  {
+    title: "typescriptsample",
+    url: "ts_sample",
+    element: <TypeScriptSample />,
+    detail: "enumとkeyoftypeof、ユニオンについて",
+    date: "2024/09/11",
   },
 ];

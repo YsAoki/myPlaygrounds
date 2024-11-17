@@ -13,7 +13,7 @@ const ReactRouter: FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(cookies);
+    // console.log(cookies);
     if (!cookies.authTokenVal) {
       navigate("/");
     }

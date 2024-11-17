@@ -5,8 +5,11 @@ import ListMuiForm from "../pages/ListMuiForm";
 import ListStyleProps from "../pages/ListStyleProps";
 import ListTodo from "../pages/ListTodo";
 import ListDayjs from "../pages/ListUseDayjs";
+import MemoRender from "../pages/MemoRender";
 import MuiDataGrid from "../pages/MuiDataGrid";
 import TypeScriptSample from "../pages/TypeScriptSample";
+import CustomHook from "../pages/CustomHook";
+import UpLoadFiles from "../pages/UploadFiles";
 
 type ReleaseDetail = {
   title: string;
@@ -72,5 +75,26 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     element: <TypeScriptSample />,
     detail: "enumとkeyoftypeof、ユニオンについて",
     date: "2024/09/11",
+  },
+  {
+    title: "レンダリングとメモ",
+    url: "memo-and-rendering",
+    element: <MemoRender />,
+    detail: "useCallBackやメモ、レンダリングについて",
+    date: "2024/10/06",
+  },
+  {
+    title: "カスタムフックとPromise.all",
+    url: "costom-hook-promise-all",
+    element: <CustomHook />,
+    detail: "カスタムフックで作るAxios get",
+    date: "2024/10/20",
+  },
+  {
+    title: "fileuploadのuseState",
+    url: "file-upload",
+    element: <UpLoadFiles />,
+    detail: "ファイルアップロードのstate管理とbase64変換",
+    date: "2024/11/17",
   },
 ];

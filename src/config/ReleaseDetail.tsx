@@ -10,6 +10,7 @@ import MuiDataGrid from "../pages/MuiDataGrid";
 import TypeScriptSample from "../pages/TypeScriptSample";
 import CustomHook from "../pages/CustomHook";
 import UpLoadFiles from "../pages/UploadFiles";
+import Union from "../pages/Union";
 
 type ReleaseDetail = {
   title: string;
@@ -96,5 +97,12 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     element: <UpLoadFiles />,
     detail: "ファイルアップロードのstate管理とbase64変換",
     date: "2024/11/17",
+  },
+  {
+    title: "TypeScriptでのUnionについて",
+    url: "use-union",
+    element: <Union />,
+    detail: "TypeScriptでUnion型を使用する",
+    date: "2024/12/08",
   },
 ];

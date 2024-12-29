@@ -11,6 +11,7 @@ import TypeScriptSample from "../pages/TypeScriptSample";
 import CustomHook from "../pages/CustomHook";
 import UpLoadFiles from "../pages/UploadFiles";
 import Union from "../pages/Union";
+import ReactHookFormVer02 from "../pages/ReactHookFormVer02";
 
 type ReleaseDetail = {
   title: string;
@@ -103,6 +104,13 @@ export const RELEASE_DETAILS: ReleaseDetail[] = [
     url: "use-union",
     element: <Union />,
     detail: "TypeScriptでUnion型を使用する",
+    date: "2024/12/08",
+  },
+  {
+    title: "ReactHookForm02",
+    url: "react-hook-form2",
+    element: <ReactHookFormVer02 />,
+    detail: "ラジオボタンやチェックボックスの実装",
     date: "2024/12/08",
   },
 ];
